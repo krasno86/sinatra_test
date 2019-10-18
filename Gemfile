@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 gem 'rack'
 gem 'sinatra'
 gem 'activesupport'
+gem 'shotgun'
+gem 'tux'
 gem 'rubocop', '~> 0.75.1', require: false
 
 group :test do
