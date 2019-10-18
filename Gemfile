@@ -1,0 +1,13 @@
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
+
+gem 'rack'
+gem 'sinatra'
+gem 'activesupport'
+gem 'rubocop', '~> 0.75.1', require: false
+
+group :test do
+ gem 'rspec'
+ gem 'rack-test'
+end
