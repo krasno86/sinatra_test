@@ -8,6 +8,10 @@ get '/messages/new' do
   # haml '/messages/new'
 end
 
-post 'messages/create' do
-
+post '/messages/create' do
+  puts "PARAMS"
+  p params
+  puts "PARAMS"
+  # p params
+  # @email = parama[:email]
 end

@@ -8,6 +8,7 @@ gem 'activesupport'
 gem 'shotgun'
 gem 'tux'
 gem 'rubocop', '~> 0.75.1', require: false
+gem 'sinatra-params-validator', '~> 0.0.4'
 
 group :test do
  gem 'rspec'
