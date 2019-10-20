@@ -1,7 +1,5 @@
 require 'sinatra'
-# get '/frank-says' do
-#   'Put this in your pipe & smoke it!'
-# end
+require_relative 'models/message'
 
 get '/messages/new' do
   erb :'/messages/new'
@@ -9,9 +7,8 @@ get '/messages/new' do
 end
 
 post '/messages/create' do
-  puts "PARAMS"
   p params
-  puts "PARAMS"
-  # p params
-  # @email = parama[:email]
+  p @message = Message.new(params)
 end
+
+
