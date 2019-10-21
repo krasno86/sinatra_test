@@ -20,7 +20,7 @@
           name: {
             required: true,
             minlength: 3,
-            maxlength: 50
+            maxlength: 250
           },
           email: {
             required: true,
@@ -28,7 +28,7 @@
           },
           body: {
             required: true,
-            minlength: 5
+            minlength: 50
           }
         },
         messages: {
@@ -40,7 +40,7 @@
           email: "Please enter a valid email address",
           body: {
             required: "Please provide a message",
-            minlength: "Your message must be at least 5 characters long",
+            minlength: "Your message must be at least 50 characters long",
           }
         }
       });
@@ -88,6 +88,5 @@
      </div>
    </div>
  </div>
-
 </body>
 </html>
