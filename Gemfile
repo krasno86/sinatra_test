@@ -8,10 +8,8 @@ gem 'activesupport'
 gem 'shotgun'
 gem 'tux'
 gem 'rubocop', '~> 0.75.1', require: false
-gem 'sendgrid-ruby'
 gem 'pony', '~> 1.13', '>= 1.13.1'
-gem "letter_opener", :group => :development
-
+gem 'letter_opener', group: :development
 
 group :test do
  gem 'rspec'
