@@ -25,5 +25,5 @@
 # Ignore idea files
 .idea/*
 config/database.yml
-/public/report/*
+/public/*
 .env
