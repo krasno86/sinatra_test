@@ -1,14 +1,14 @@
 class SendEmail
   attr_accessor :name, :email, :body, :file
 
-  def initialize(params)
-    @name = params[:name]
+  def initialize(params = {})
+    @name  = params[:name]
     @email = params[:email]
-    @body = params[:body]
-    @file = params[:file]
+    @body  = params[:body]
+    @file  = params[:file]
   end
 
-  def perform
+  def call
     attachments = file ? {file[:filename] => File.read(file[:tempfile])} : ''
     Pony.mail({
       from: email,
