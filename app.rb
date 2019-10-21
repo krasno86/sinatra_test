@@ -2,6 +2,7 @@ require 'rack/validator/sinatra'
 require 'sinatra'
 require 'pony'
 require 'dotenv/load'
+require_relative 'services/send_email'
 
 get '/' do
   erb :'/messages/new'
@@ -19,22 +20,7 @@ post '/messages/create' do
   if validator.has_errors?
     p validator.messages.join('|')
   else
-    attachments = params[:file] ? {params[:file][:filename] => File.read(params[:file][:tempfile])} : ''
-    Pony.mail({
-      from: params[:email],
-      to: ENV['ADMIN_EMAIL'],
-      subject: "user #{params[:name]} feedback",
-      body: params[:body],
-      attachments: attachments,
-      via: :smtp,
-      via_options: {
-        address: 'smtp.gmail.com',
-        domain: 'gmail.com',
-        port: '587',
-        user_name: ENV['USERNAME'],
-        password: ENV['PASSWORD']
-      }
-    })
+    SendEmail.new(params).perform
     redirect '/success'
   end
 end
