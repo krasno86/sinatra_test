@@ -9,8 +9,3 @@ gem 'shotgun'
 gem 'tux'
 gem 'rubocop', '~> 0.75.1', require: false
 gem 'pony', '~> 1.13', '>= 1.13.1'
-
-group :test do
- gem 'rspec'
- gem 'rack-test'
-end
